@@ -19,32 +19,32 @@ global = {
   \time 2/4
 }
 
-% ================= %
-% chorus first part %
-% ================= %
+% ===== %
+% verse %
+% ===== %
 
-sop = \relative d' {
+sopVerse = \relative d' {
 	| fis8 a a a | a b a g 
 	| fis a a a  | a b a g 
 	| fis a e g  | fis a e g 
 	| fis4 e     | d  r |
 }
 
-alto = \relative d' {
+altoVerse = \relative d' {
 	| d8 fis fis fis | fis g fis e
 	| d fis fis fis  | fis g fis e
 	| d fis cis e  | d fis e cis
 	| d4 cis         | d  r |
 }
 
-tenor = \relative d' {
+tenorVerse = \relative d' {
 	| a8 d d cis | d b d b
 	| a d d cis | d b cis b
 	| a4 g | a b
 	| a4 g | fis  r |
 }
 
-bass = \relative d {
+bassVerse = \relative d {
 	| d a | b g
 	| d' fis, | g a
 	| d e | fis g
@@ -52,7 +52,7 @@ bass = \relative d {
 }
 
 words = \lyricmode {
-	| i -- lu ho -- tzi | ho -- tzi -- a -- nu | ho -- tzi -- a -- nu | mi -- mitz -- ra -- yim | ho -- tzi -- a -- nu | mi -- mitz -- ra -- yim | da -- ye -- | nu |
+	| i -- lu ho -- tzi | ho -- tzi -- a -- nu | ho -- tzi -- a -- nu | mi -- mitz -- ra -- yim | ho -- tzi -- a -- nu | mi -- mitz -- ra -- yim | day -- e -- | nu |
 }
 
 tenorWords = \lyricmode {
@@ -62,19 +62,8 @@ tenorWords = \lyricmode {
 	| mi -- mitz -- ra -- yim 
 	| mi -- mitz -- 
 	| ra -- yim 
-	| da -- ye -- 
+	| day -- e -- 
 	| nu |
-}
-
-bassDms = \lyricmode {
-	| dm dm 
-	| dm dm 
-	| dm dm 
-	| dm dm 
-	| dm dm 
-	| dm dm
-	| dm dm 
-	| dm
 }
 
 bassWords = \lyricmode {
@@ -84,9 +73,144 @@ bassWords = \lyricmode {
 	| a -- nu 
 	| mi -- mitz -- 
 	| ra -- yim 
-	| da -- ye -- 
+	| day -- e -- 
 	| nu |
 }
+
+% ====== %
+% chorus %
+% ====== %
+
+sopChorusCommon = \relative d' {
+	| fis4 fis 
+	| a8 g4( e8)
+	| g4 g
+	| b8 a4( fis8)
+	| a4 a
+	| d8 cis4 cis8
+	| cis a b cis |
+}
+
+
+sopChorusEndOne = \relative d'' {
+	| d8 a fis d |
+}
+
+sopChorusEndTwo = \relative d'' {
+	| d4 r4 |
+}
+
+altoChorusCommon = \relative d' {
+	| d4 d
+	| fis8 e4.
+	| e4 e
+	| g8 fis4.
+	| fis4 fis
+	| a8 a4 a8
+	| a8 a g g |
+}
+
+altoChorusEndOne = \relative d' {
+	| fis4 fis8 d |
+}
+
+altoChorusEndTwo = \relative d' {
+	| fis4 r |
+}
+
+tenorChorusCommon = \relative d' {
+	| a4 a 
+	| cis8 cis4.
+	| cis4 cis 
+	| d8 d4.
+	| d4 a 
+	| b b 
+	| cis d8 e |
+}
+
+tenorChorusEndOne = \relative d' {
+	| fis4 fis8 d |
+}
+
+tenorChorusEndTwo = \relative d' {
+	| fis4 r |
+}
+
+bassChorusCommon = \relative d {
+	| d4 d
+	| a8 a4.
+	| e'4 a,
+	| d8 d4.
+	| fis,4 fis
+	| g g 
+	| a e' |
+}
+
+bassChorusEndOne = \relative d {
+	| d2 |
+}
+
+bassChorusEndTwo = \relative d {
+	| d4 r |
+}
+
+upperChorusWordsCommon = \lyricmode {
+	| day- day -- | e -- nu 
+	| day- day -- | e -- nu
+	| day- day -- | e -- nu day -- 
+	| ye -- nu day -- e -- |
+}
+
+sopChorusWordsEndOne = \lyricmode {
+	| nu day -- e -- nu |
+}
+
+altoChorusWordsEndOne = \lyricmode {
+	| nu ye -- nu |
+}
+
+upperChorusWordsEndTwo = \lyricmode {
+	| nu |
+}
+
+lowerChorusWordsCommon = \lyricmode {
+	| day- day -- | ye -- nu 
+	| day- day -- | ye -- nu
+	| day- day -- | ye day -- |
+}
+
+tenorChorusWordsEndOne = \lyricmode {
+	| day day -- e -- | nu -ye -- nu |
+}
+
+tenorChorusWordsEndTwo = \lyricmode {
+	| day day -- e -- | nu |
+}
+
+bassChorusWordsEnd = \lyricmode {
+	| day -- e -- | nu |
+}
+
+% ======== %
+% in order %
+% ======== %
+
+sop = { \sopVerse \sopChorusCommon \sopChorusEndOne \sopChorusCommon \sopChorusEndTwo }
+
+alto = { \altoVerse \altoChorusCommon \altoChorusEndOne \altoChorusCommon 
+\altoChorusEndTwo }
+
+tenor = { \tenorVerse \tenorChorusCommon \tenorChorusEndOne \tenorChorusCommon \tenorChorusEndTwo }
+
+bass = { \bassVerse \bassChorusCommon \bassChorusEndOne \bassChorusCommon \bassChorusEndTwo }
+
+sopWordsAll = { \words \upperChorusWordsCommon \sopChorusWordsEndOne \upperChorusWordsCommon \upperChorusWordsEndTwo }
+
+altoWordsAll = { \words \upperChorusWordsCommon \altoChorusWordsEndOne \upperChorusWordsCommon \upperChorusWordsEndTwo }
+
+tenorWordsAll = { \tenorWords \lowerChorusWordsCommon \tenorChorusWordsEndOne \lowerChorusWordsCommon \tenorChorusWordsEndTwo }
+
+bassWordsAll = { \bassWords \lowerChorusWordsCommon \bassChorusWordsEnd \lowerChorusWordsCommon \bassChorusWordsEnd }
 
 mainChorusOne = \relative c' {
 	| e8 e e e e e | e d8. c16 b4 b8 | d8 d d d d d | d c8. b16 a4 a8 |
@@ -286,10 +410,10 @@ bassMusic = { \baseChorusOneA \baseChorusTwoA }
       }
     >>
     \new Lyrics = "basses"
-    \context Lyrics = "sopranos" \lyricsto "sopranos" \words
-    \context Lyrics = "altos" \lyricsto "altos" \words
-    \context Lyrics = "tenors" \lyricsto "tenors" \tenorWords
-    \context Lyrics = "basses" \lyricsto "basses" \bassWords
+    \context Lyrics = "sopranos" \lyricsto "sopranos" \sopWordsAll
+    \context Lyrics = "altos" \lyricsto "altos" \altoWordsAll
+    \context Lyrics = "tenors" \lyricsto "tenors" \tenorWordsAll
+    \context Lyrics = "basses" \lyricsto "basses" \bassWordsAll
   >>
 \layout{}
 \midi{ \tempo 4 = 100 }

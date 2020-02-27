@@ -431,7 +431,7 @@ bassMusic = { \baseChorusOneA \baseChorusTwoA }
 % bassWords = { \bassDoom \bassDoomTwo }
 
 
-\score {
+allStuff = {
   \new ChoirStaff <<
     \new Lyrics = "sopranos" \with {
       % this is needed for lyrics above a staff
@@ -470,6 +470,18 @@ bassMusic = { \baseChorusOneA \baseChorusTwoA }
     \context Lyrics = "tenors" \lyricsto "tenors" \tenorWordsAll
     \context Lyrics = "basses" \lyricsto "basses" \bassWordsAll
   >>
-\layout{}
-\midi{ \tempo 4 = 100 }
+}
+
+% For printed pdf music.
+\score {
+	\allStuff
+	\layout{}
+}
+
+% For midi
+\score {
+	\unfoldRepeats {
+		\allStuff
+	}
+	\midi{ \tempo 4 = 100 }
 }

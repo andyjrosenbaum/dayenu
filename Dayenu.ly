@@ -179,38 +179,93 @@ lowerChorusWordsCommon = \lyricmode {
 	| day- day -- | ye day -- |
 }
 
+tenorChorusWordsCommon = {
+	\lowerChorusWordsCommon \lyricmode { | day day -- e -- | }
+}
+
 tenorChorusWordsEndOne = \lyricmode {
-	| day day -- e -- | nu -ye -- nu |
+	| nu -ye -- nu |
 }
 
 tenorChorusWordsEndTwo = \lyricmode {
-	| day day -- e -- | nu |
+	| nu |
+}
+
+bassChorusWordsCommon = {
+	\lowerChorusWordsCommon \lyricmode { | day -- e -- | }
 }
 
 bassChorusWordsEnd = \lyricmode {
-	| day -- e -- | nu |
+	| nu |
 }
 
 % ======== %
 % in order %
 % ======== %
 
-sop = { \sopVerse \sopChorusCommon \sopChorusEndOne \sopChorusCommon \sopChorusEndTwo }
+sop = {
+	\sopVerse
+	\repeat volta 2 \sopChorusCommon
+	\alternative {
+		{ \sopChorusEndOne }
+		{ \sopChorusEndTwo }
+	}
+}
 
-alto = { \altoVerse \altoChorusCommon \altoChorusEndOne \altoChorusCommon 
-\altoChorusEndTwo }
+alto = {
+	\altoVerse
+	\repeat volta 2 \altoChorusCommon 
+	\alternative {
+		{ \altoChorusEndOne }
+		{ \altoChorusEndTwo }
+	}
+}
 
-tenor = { \tenorVerse \tenorChorusCommon \tenorChorusEndOne \tenorChorusCommon \tenorChorusEndTwo }
+tenor = {
+	\tenorVerse
+	\repeat volta 2 \tenorChorusCommon
+	\alternative {
+		{ \tenorChorusEndOne }
+		{ \tenorChorusEndTwo }
+	}
+}
 
-bass = { \bassVerse \bassChorusCommon \bassChorusEndOne \bassChorusCommon \bassChorusEndTwo }
+bass = {
+	\bassVerse 
+	\repeat volta 2 \bassChorusCommon
+	\alternative {
+		{ \bassChorusEndOne }
+		{ \bassChorusEndTwo }
+	}
+}
 
-sopWordsAll = { \words \upperChorusWordsCommon \sopChorusWordsEndOne \upperChorusWordsCommon \upperChorusWordsEndTwo }
+sopWordsAll = {
+	\words
+	\upperChorusWordsCommon
+	\sopChorusWordsEndOne
+	\upperChorusWordsEndTwo 
+}
 
-altoWordsAll = { \words \upperChorusWordsCommon \altoChorusWordsEndOne \upperChorusWordsCommon \upperChorusWordsEndTwo }
+altoWordsAll = { 
+	\words 
+	\upperChorusWordsCommon 
+	\altoChorusWordsEndOne 
+	\upperChorusWordsEndTwo 
+}
 
-tenorWordsAll = { \tenorWords \lowerChorusWordsCommon \tenorChorusWordsEndOne \lowerChorusWordsCommon \tenorChorusWordsEndTwo }
+tenorWordsAll = { 
+	\tenorWords 
+	\tenorChorusWordsCommon 
+	\tenorChorusWordsEndOne 
+	\tenorChorusWordsEndTwo 
+}
 
-bassWordsAll = { \bassWords \lowerChorusWordsCommon \bassChorusWordsEnd \lowerChorusWordsCommon \bassChorusWordsEnd }
+bassWordsAll = { 
+	\bassWords 
+	\bassChorusWordsCommon 
+	\bassChorusWordsEnd  
+	\bassChorusWordsEnd 
+}
 
 mainChorusOne = \relative c' {
 	| e8 e e e e e | e d8. c16 b4 b8 | d8 d d d d d | d c8. b16 a4 a8 |

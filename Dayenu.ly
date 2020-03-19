@@ -1,9 +1,9 @@
 \version "2.18.2"  % necessary for upgrading to future LilyPond versions.
 
 \header {
-	title = "Dayenu v1"
+	title = "Dayenu v2"
 	composer = "Jewish Traditional"
-	arranger = "arr. Andy Rosenbaum Feb 2020"
+	arranger = "arr. Andy Rosenbaum March 2020"
 }
 
 
@@ -34,19 +34,19 @@ altoVerse = \relative d' {
 	| d8 fis fis fis | fis g fis e
 	| d fis fis fis  | fis g fis e
 	| d fis cis e  | d fis e cis
-	| d4 cis         | d  r |
+	| d4 cis         | a  r |
 }
 
 tenorVerse = \relative d' {
-	| a8 d d cis | d b d b
-	| a d d cis | d b cis b
-	| a4 g | a b
+	| a8 d d d | d d a cis
+	| d a a a  | a a a cis
+	| d4 cis | d b
 	| a4 g | fis  r |
 }
 
 bassVerse = \relative d {
-	| d a | b g
-	| d' fis, | g a
+	| d d | a a
+	| d d | a a
 	| d e | fis g
 	| a a, | d r
 }
@@ -125,15 +125,15 @@ tenorChorusCommon = \relative d' {
 	| d8 d4.
 	| d4 a 
 	| b b 
-	| cis d8 e |
+	| cis cis8 cis |
 }
 
 tenorChorusEndOne = \relative d' {
-	| fis4 fis8 d |
+	| a4 a8 a |
 }
 
 tenorChorusEndTwo = \relative d' {
-	| fis4 r |
+	| a4 r |
 }
 
 bassChorusCommon = \relative d {
@@ -141,9 +141,9 @@ bassChorusCommon = \relative d {
 	| a8 a4.
 	| e'4 a,
 	| d8 d4.
-	| fis,4 fis
+	| d4 fis
 	| g g 
-	| a e' |
+	| a a, |
 }
 
 bassChorusEndOne = \relative d {

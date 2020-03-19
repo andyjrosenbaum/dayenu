@@ -33,22 +33,22 @@ sopVerse = \relative d' {
 altoVerse = \relative d' {
 	| d8 fis fis fis | fis g fis e
 	| d fis fis fis  | fis g fis e
-	| d fis cis e  | d fis e cis
+	| d fis cis e  | d fis cis e
 	| d4 cis         | a  r |
 }
 
 tenorVerse = \relative d' {
 	| a8 d d d | d d a cis
 	| d a a a  | a a a cis
-	| d4 cis | d b
+	| d4 a | b g
 	| a4 g | fis  r |
 }
 
 bassVerse = \relative d {
 	| d d | a a
 	| d d | a a
-	| d e | fis g
-	| a a, | d r
+	| d e | fis e
+	| fis a, | d r
 }
 
 words = \lyricmode {

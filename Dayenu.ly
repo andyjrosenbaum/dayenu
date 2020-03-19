@@ -3,7 +3,7 @@
 \header {
 	title = "Dayenu v2"
 	composer = "Jewish Traditional"
-	arranger = "arr. Andy Rosenbaum March 2020"
+	arranger = "arr. Andy Rosenbaum & Talia Greenberg March 2020"
 }
 
 
@@ -123,9 +123,9 @@ tenorChorusCommon = \relative d' {
 	| cis8 cis4.
 	| cis4 cis 
 	| d8 d4.
-	| d4 a 
-	| b b 
-	| cis cis8 cis |
+	| d4 d 
+	| e e 
+	| e e8 e |
 }
 
 tenorChorusEndOne = \relative d' {

@@ -25,7 +25,7 @@ global = {
 % =========== %
 
 sopVerse = \relative d' {
-	| fis8 a a a | a b a g 
+	| fis8^\mf a a a | a b a g 
 	| fis  a a a | a b a g 
 	| fis  a e g | fis a e g 
 	| fis4 e     | d  r |
@@ -64,7 +64,7 @@ mitzWords = \lyricmode {
 }
 
 tenorWords = \lyricmode {
-	| ba ba
+	| ba ba |
 	| ba ba
 	| ba ba
 	| ba ba
@@ -90,7 +90,7 @@ bassWords = \lyricmode {
 % ============ %
 
 sopChorusCommon = \relative d' {
-	| fis4 fis 
+	| fis4^\f fis 
 	| a8 g4( e8)
 	| g4 g
 	| b8 a4( fis8)

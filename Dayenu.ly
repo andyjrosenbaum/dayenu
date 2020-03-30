@@ -48,7 +48,7 @@ bassVerse = \relative d {
 	| d d | a a
 	| d d | a a
 	| d e | fis g
-	| a a, | d r
+	| a a, | d8 a b cis
 }
 
 words = \lyricmode {
@@ -74,7 +74,7 @@ bassWords = \lyricmode {
 	| mi -- mitz -- 
 	| ra -- yim 
 	| day -- e -- 
-	| nu |
+	| nu doom doom doom |
 }
 
 % ====== %
@@ -125,11 +125,11 @@ tenorChorusCommon = \relative d' {
 	| d8 d4.
 	| d4 d 
 	| e e 
-	| e e8 e |
+	| e e8 cis |
 }
 
 tenorChorusEndOne = \relative d' {
-	| a4 a8 a |
+	| a4 r4 |
 }
 
 tenorChorusEndTwo = \relative d' {
@@ -147,7 +147,7 @@ bassChorusCommon = \relative d {
 }
 
 bassChorusEndOne = \relative d {
-	| d2 |
+	| d8 a b cis |
 }
 
 bassChorusEndTwo = \relative d {
@@ -184,7 +184,7 @@ tenorChorusWordsCommon = {
 }
 
 tenorChorusWordsEndOne = \lyricmode {
-	| nu -ye -- nu |
+	| nu |
 }
 
 tenorChorusWordsEndTwo = \lyricmode {
@@ -195,7 +195,11 @@ bassChorusWordsCommon = {
 	\lowerChorusWordsCommon \lyricmode { | day -- e -- | }
 }
 
-bassChorusWordsEnd = \lyricmode {
+bassChorusWordsEndOne = \lyricmode {
+	| nu day -- e -- nu |
+}
+
+bassChorusWordsEndTwo = \lyricmode {
 	| nu |
 }
 
@@ -263,8 +267,8 @@ tenorWordsAll = {
 bassWordsAll = { 
 	\bassWords 
 	\bassChorusWordsCommon 
-	\bassChorusWordsEnd  
-	\bassChorusWordsEnd 
+	\bassChorusWordsEndOne 
+	\bassChorusWordsEndTwo
 }
 
 mainChorusOne = \relative c' {

@@ -111,7 +111,7 @@ altoChorusCommon = \relative d' {
 }
 
 altoChorusEndOne = \relative d' {
-	| fis4 fis8 d |
+	| fis8 a fis d |
 }
 
 altoChorusEndTwo = \relative d' {
@@ -162,11 +162,11 @@ upperChorusWordsCommon = \lyricmode {
 }
 
 sopChorusWordsEndOne = \lyricmode {
-	| nu |
+	| nu da -- ye -- nu |
 }
 
 altoChorusWordsEndOne = \lyricmode {
-	| nu ye -- nu |
+	| nu da -- ye -- nu |
 }
 
 upperChorusWordsEndTwo = \lyricmode {
@@ -470,7 +470,7 @@ allStuff = {
       }
     >>
     \new Lyrics = "basses"
-    \context Lyrics = "sopranos" \lyricsto "sopranos" \sopWordsAll
+%    \context Lyrics = "sopranos" \lyricsto "sopranos" \sopWordsAll
     \context Lyrics = "altos" \lyricsto "altos" \altoWordsAll
     \context Lyrics = "tenors" \lyricsto "tenors" \tenorWordsAll
     \context Lyrics = "basses" \lyricsto "basses" \bassWordsAll

@@ -442,6 +442,7 @@ allStuff = {
       \override VerticalAxisGroup.staff-affinity = #DOWN
     }
     \new Staff = "upper" <<
+  \tempo 4 = 100
 	\set Staff.midiInstrument = "voice oohs"
       \new Voice = "sopranos" {
         \voiceOne
@@ -487,5 +488,5 @@ allStuff = {
 	\unfoldRepeats {
 		\allStuff
 	}
-	\midi{ \tempo 4 = 80 }
+	\midi{ \tempo 4 = 100 }
 }

@@ -40,15 +40,15 @@ altoVerse = \relative d' {
 tenorVerse = \relative d' {
 	| a8 d d d | d d a cis
 	| d a a a  | a a a cis
-	| d4 a | b g
+	| d4 a | a a
 	| a4 g | fis  r |
 }
 
 bassVerse = \relative d {
 	| d d | a a
 	| d d | a a
-	| d e | fis e
-	| fis a, | d r
+	| d e | fis g
+	| a a, | d r
 }
 
 words = \lyricmode {
@@ -483,5 +483,5 @@ allStuff = {
 	\unfoldRepeats {
 		\allStuff
 	}
-	\midi{ \tempo 4 = 100 }
+	\midi{ \tempo 4 = 80 }
 }

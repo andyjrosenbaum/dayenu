@@ -38,16 +38,16 @@ altoVerse = \relative d' {
 }
 
 tenorVerse = \relative d' {
-	| a8 d d d | d d a cis
-	| d a a a  | a a a cis
+	| r8 d r d | r d r cis
+	| r a r a  | r a r cis
 	| d4 a | a a
 	| a4 g | fis  r |
 }
 
 bassVerse = \relative d {
-	| d d | a a
-	| d d | a a
-	| d e | fis g
+	| d8 r d r | a r a r
+	| d r d r | a r a r
+	| d4 e | fis g
 	| a a, | d8 a b cis
 }
 

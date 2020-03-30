@@ -1,7 +1,7 @@
 \version "2.18.2"  % necessary for upgrading to future LilyPond versions.
 
 \header {
-	title = "Dayenu v3.1"
+	title = "Dayenu v3.2"
 	composer = "Jewish Traditional"
 	arranger = "arr. Andy Rosenbaum & edited Talia Greenberg, Pesach 5780 (2020)"
 }
@@ -95,8 +95,8 @@ sopChorusCommon = \relative d' {
           \parenthesize
           e8^\markup { \smaller \smaller \center-align
               \column {
-                  \line { "(1st: sing)" }
-                  \line { "(2nd: breath)" }
+                  \line { "(1: Sing)" }
+                  \line { "(2: Breath)" }
               }
           }
       )
@@ -136,9 +136,9 @@ altoChorusEndTwo = \relative d' {
 
 tenorChorusCommon = \relative d' {
 	| a4 a 
-	| cis8 cis4.^\markup { \smaller \smaller \halign #-1.8 "(No breath)" }
+	| cis8 cis4.^\markup { \smaller \smaller \halign #-2.7 "(NB)" }
 	| cis4 cis 
-	| d8 d4.
+	| d8 d4.^\markup { \smaller \smaller \halign #-2.7 "(NB)" }
 	| d4 d 
 	| e e 
 	| e cis8 cis |

@@ -93,7 +93,7 @@ sopChorusCommon = \relative d' {
 	| fis4^\f fis
 	| a8 g4(
           \parenthesize
-          e8^\markup {
+          e8^\markup { \smaller \smaller \center-align
               \column {
                   \line { "(1st: sing)" }
                   \line { "(2nd: breath)" }
@@ -136,7 +136,7 @@ altoChorusEndTwo = \relative d' {
 
 tenorChorusCommon = \relative d' {
 	| a4 a 
-	| cis8 cis4( cis8^"(Both: sing)")
+	| cis8 cis4.^\markup { \smaller \smaller \halign #-1.8 "(No breath)" }
 	| cis4 cis 
 	| d8 d4.
 	| d4 d 
@@ -145,7 +145,7 @@ tenorChorusCommon = \relative d' {
 }
 
 tenorChorusEndOne = \relative d' {
-	| a4 r \breathe |
+	| a8 r8 r4 \breathe |
 }
 
 tenorChorusEndTwo = \relative d' {
@@ -154,7 +154,7 @@ tenorChorusEndTwo = \relative d' {
 
 bassChorusCommon = \relative d {
 	| d4 d
-	| a8 a4( a8)
+	| a8 a4.
 	| e'4 a,
 	| d8 d4.
 	| d4 fis
@@ -163,7 +163,7 @@ bassChorusCommon = \relative d {
 }
 
 bassChorusEndOne = \relative d {
-	| d4 r \breathe |
+	| d8 r8 r4 \breathe |
 }
 
 bassChorusEndTwo = \relative d {

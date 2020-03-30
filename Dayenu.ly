@@ -56,21 +56,21 @@ words = \lyricmode {
 }
 
 tenorWords = \lyricmode {
-	| i -- lu ho -- tzi 
-	| ho -- tzi -- a -- nu 
-	| ho -- tzi -- a -- nu 
-	| mi -- mitz -- ra -- yim 
+	| ba ba
+	| ba ba
+	| ba ba
+	| ba ba
 	| mi -- mitz -- 
 	| ra -- yim 
 	| day -- e -- 
-	| nu |
+	| nu  |
 }
 
 bassWords = \lyricmode {
-	| i -- lu 
-	| ho -- tzi 
-	| ho -- tzi 
-	| a -- nu 
+	| dim dim
+	| dim dim
+	| dim dim
+	| dim dim
 	| mi -- mitz -- 
 	| ra -- yim 
 	| day -- e -- 

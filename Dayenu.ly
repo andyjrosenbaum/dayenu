@@ -125,11 +125,11 @@ tenorChorusCommon = \relative d' {
 	| d8 d4.
 	| d4 d 
 	| e e 
-	| e e8 cis |
+	| e cis8 cis |
 }
 
 tenorChorusEndOne = \relative d' {
-	| a4 r4 |
+	| a2 |
 }
 
 tenorChorusEndTwo = \relative d' {
@@ -147,7 +147,7 @@ bassChorusCommon = \relative d {
 }
 
 bassChorusEndOne = \relative d {
-	| d8 a b cis |
+	| d2 |
 }
 
 bassChorusEndTwo = \relative d {
@@ -162,7 +162,7 @@ upperChorusWordsCommon = \lyricmode {
 }
 
 sopChorusWordsEndOne = \lyricmode {
-	| nu day -- e -- nu |
+	| nu |
 }
 
 altoChorusWordsEndOne = \lyricmode {

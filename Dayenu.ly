@@ -1,7 +1,7 @@
 \version "2.18.2"  % necessary for upgrading to future LilyPond versions.
 
 \header {
-	title = "Dayenu v3"
+	title = "Dayenu v3.1"
 	composer = "Jewish Traditional"
 	arranger = "arr. Andy Rosenbaum & edited Talia Greenberg, Pesach 5780 (2020)"
 }
@@ -28,26 +28,26 @@ sopVerse = \relative d' {
 	| fis8^\mf a a a | a b a g 
 	| fis  a a a | a b a g 
 	| fis  a e g | fis a e g 
-	| fis4 e     | d  r |
+	| fis4 e     | d8  r8 r4 |
 }
 
 altoVerse = \relative d' {
 	| d8 fis fis fis | fis g fis e
 	| d  fis fis fis | fis g fis e
 	| d  fis cis e   | d fis cis e
-	| d4 cis         | a  r |
+	| d4 cis         | a8  r8 r4 |
 }
 
 tenorVerse = \relative d' {
 	| r8 d r d | r d r cis
 	| r a r a  | r a r cis
 	| d4 a | a a
-	| a4 g | fis  r |
+	| a4 g | fis8  r8 r4 |
 }
 
 bassVerse = \relative d {
 	| d8 r d r | a r a r
-	| d r d r | a r a r
+	| d r d r | a r a r \breathe
 	| d4 e | fis g
 	| a a, | d8 a b cis |
 }
@@ -64,7 +64,7 @@ mitzWords = \lyricmode {
 }
 
 tenorWords = \lyricmode {
-	| ba ba |
+	| ba ba
 	| ba ba
 	| ba ba
 	| ba ba
@@ -90,8 +90,16 @@ bassWords = \lyricmode {
 % ============ %
 
 sopChorusCommon = \relative d' {
-	| fis4^\f fis 
-	| a8 g4( e8)
+	| fis4^\f fis
+	| a8 g4(
+          \parenthesize
+          e8^\markup {
+              \column {
+                  \line { "(1st: sing)" }
+                  \line { "(2nd: breath)" }
+              }
+          }
+      )
 	| g4 g
 	| b8 a4( fis8)
 	| a4 a
@@ -110,9 +118,9 @@ sopChorusEndTwo = \relative d'' {
 
 altoChorusCommon = \relative d' {
 	| d4 d
-	| fis8 e4.
+	| fis8 e4( \parenthesize e8 )
 	| e4 e
-	| g8 fis4.
+	| g8 fis4( fis8)
 	| fis4 fis
 	| a8 a4 a8
 	| a8 a g g |
@@ -128,7 +136,7 @@ altoChorusEndTwo = \relative d' {
 
 tenorChorusCommon = \relative d' {
 	| a4 a 
-	| cis8 cis4.
+	| cis8 cis4( cis8^"(Both: sing)")
 	| cis4 cis 
 	| d8 d4.
 	| d4 d 
@@ -137,7 +145,7 @@ tenorChorusCommon = \relative d' {
 }
 
 tenorChorusEndOne = \relative d' {
-	| a2 |
+	| a4 r \breathe |
 }
 
 tenorChorusEndTwo = \relative d' {
@@ -146,16 +154,16 @@ tenorChorusEndTwo = \relative d' {
 
 bassChorusCommon = \relative d {
 	| d4 d
-	| a8 a4.
+	| a8 a4( a8)
 	| e'4 a,
 	| d8 d4.
 	| d4 fis
 	| g g 
-	| a a, |
+	| a a,8 a |
 }
 
 bassChorusEndOne = \relative d {
-	| d2 |
+	| d4 r \breathe |
 }
 
 bassChorusEndTwo = \relative d {
@@ -174,7 +182,7 @@ upperChorusWordsCommon = \lyricmode {
 	| day- da -- | ye -- nu 
 	| day- da -- | ye -- nu
 	| day- da -- | ye -- nu da -- 
-	| ye -- nu da -- ye -- |
+	| ye -- nu da -- ye --
 }
 
 upperChorusWordsEndOne = \lyricmode {
@@ -204,7 +212,7 @@ tenorChorusWordsEndTwo = \lyricmode {
 }
 
 bassChorusWordsCommon = {
-	\lowerChorusWordsCommon \lyricmode { | ye -- e -- | }
+	\lowerChorusWordsCommon \lyricmode { | ye da -- ye -- | }
 }
 
 bassChorusWordsEndOne = \lyricmode {
@@ -293,7 +301,6 @@ allStuff = {
       \override VerticalAxisGroup.staff-affinity = #DOWN
     }
     \new Staff = "upper" <<
-  \tempo 4 = 100
 	\set Staff.midiInstrument = "voice oohs"
       \new Voice = "sopranos" {
         \voiceOne
@@ -310,7 +317,7 @@ allStuff = {
       \override VerticalAxisGroup.staff-affinity = #DOWN
     }
     \new Staff = "lower" <<
-      \set Staff.midiInstrument = "voice oohs"
+    \set Staff.midiInstrument = "voice oohs"
       \clef bass
       \new Voice = "tenors" {
         \voiceOne
@@ -339,5 +346,5 @@ allStuff = {
 	\unfoldRepeats {
 		\allStuff
 	}
-	\midi{ \tempo 4 = 100 }
+	\midi{ }
 }

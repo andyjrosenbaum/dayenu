@@ -1,7 +1,7 @@
 \version "2.18.2"  % necessary for upgrading to future LilyPond versions.
 
 \header {
-	title = "Dayenu v3.2"
+	title = "Dayenu v3.2 Solfege"
 	composer = "Jewish Traditional"
 	arranger = "arr. Andy Rosenbaum & edited Talia Greenberg, Pesach 5780 (2020)"
 }
@@ -83,6 +83,39 @@ bassWords = \lyricmode {
 	| ra -- yim 
 	| day -- e -- 
 	| nu doom doom doom |
+}
+
+
+% =================== %
+% verse solfege words %
+% =================== %
+
+sopVerseSolfege = \lyricmode {
+	| M S S S | S L S F
+    | M S S S | S L S F
+    | M S R F | M S R F
+    | M R D
+}
+
+altoVerseSolfege = \lyricmode {
+	| D M M M | M F M R
+    | D M M M | M F M R
+    | D M T R | D M T R
+    | D T S
+}
+
+tenorVerseSolfege = \lyricmode {
+	| D D | D T
+    | S S | S T
+    | D S | S S
+    | S F M
+}
+
+bassVerseSolfege = \lyricmode {
+	| D D | S S
+    | D D | S S
+    | D R | M F
+    | S S, D
 }
 
 % ============ %
@@ -294,6 +327,26 @@ bassWordsAll = {
 
 emptyWords = \lyricmode {}
 
+% All Solfege Words
+
+sopAllSolfege = {
+	\sopVerseSolfege
+}
+
+altoAllSolfege = {
+	\altoVerseSolfege
+}
+
+tenorAllSolfege = {
+	\tenorVerseSolfege
+}
+
+bassAllSolfege = {
+	\bassVerseSolfege
+}
+
+% All stuff
+
 allStuff = {
   \new ChoirStaff <<
     \new Lyrics = "sopranos" \with {
@@ -328,10 +381,10 @@ allStuff = {
       }
     >>
     \new Lyrics = "basses"
-%     \context Lyrics = "sopranos" \lyricsto "sopranos" \emptyWords
-    \context Lyrics = "altos" \lyricsto "altos" \altoWordsAll
-    \context Lyrics = "tenors" \lyricsto "tenors" \tenorWordsAll
-    \context Lyrics = "basses" \lyricsto "basses" \bassWordsAll
+    \context Lyrics = "sopranos" \lyricsto "sopranos" \sopAllSolfege
+    \context Lyrics = "altos" \lyricsto "altos" \altoAllSolfege
+    \context Lyrics = "tenors" \lyricsto "tenors" \tenorAllSolfege
+    \context Lyrics = "basses" \lyricsto "basses" \bassAllSolfege
   >>
 }
 

@@ -17,7 +17,7 @@
 global = {
   \key d \major
   \time 2/4
-  \tempo 4 = 100
+  \tempo 4 = 60
 }
 
 % =========== %
@@ -437,14 +437,14 @@ allStuff = {
     }
     \new Staff = "upper" <<
 	\set Staff.midiInstrument = "voice oohs"
-      \new Voice = "sopranos" {
-        \voiceOne
-        << \global \sop >>
-      }
-      \new Voice = "altos" {
-        \voiceTwo
-        << \global \alto >>
-      }
+       \new Voice = "sopranos" {
+         \voiceOne
+         << \global \sop >>
+       }
+       \new Voice = "altos" {
+         \voiceTwo
+         << \global \alto >>
+       }
     >>
     \new Lyrics = "altos"
     \new Lyrics = "tenors" \with {
@@ -454,13 +454,13 @@ allStuff = {
     \new Staff = "lower" <<
     \set Staff.midiInstrument = "voice oohs"
       \clef bass
-      \new Voice = "tenors" {
-        \voiceOne
-        << \global \tenor >>
-      }
-      \new Voice = "basses" {
-        \voiceTwo << \global \bass >>
-      }
+       \new Voice = "tenors" {
+         \voiceOne
+         << \global \tenor >>
+       }
+       \new Voice = "basses" {
+         \voiceTwo << \global \bass >>
+       }
     >>
     \new Lyrics = "basses"
     \context Lyrics = "sopranos" \lyricsto "sopranos" \sopAllSolfege
@@ -479,7 +479,8 @@ allStuff = {
         %	notation/changing-horizontal-spacing
     	\context {
 			\Score
-				\override SpacingSpanner.base-shortest-duration = #(ly:make-moment 1/48)
+				% 4 for close spacing, 48 for separated spacing.
+				\override SpacingSpanner.base-shortest-duration = #(ly:make-moment 1/4)
 		}
     }
 }

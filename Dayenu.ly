@@ -115,7 +115,7 @@ bassVerseSolfege = \lyricmode {
 	| D D | S S
     | D D | S S
     | D R | M F
-    | S S, D
+    | S S, | D S L T
 }
 
 % ============ %
@@ -256,6 +256,75 @@ bassChorusWordsEndTwo = \lyricmode {
 	| nu |
 }
 
+% ==================== %
+% chorus words solfege %
+% ==================== %
+
+% Sop
+sopChorusSolfegeCommon = \lyricmode {
+	| M M | S F-R
+	| F F | L S-M
+	| S S  | D T T
+	| T S L T
+}
+
+sopChorusSolfegeEndOne = \lyricmode {
+	| D S M D |
+}
+
+sopChorusSolfegeEndTwo = \lyricmode {
+	| D |
+}
+
+% Alto
+altoChorusSolfegeCommon = \lyricmode {
+	| D D | M R
+	| R R | F M
+	| M M | S S S
+	| S S F F
+}
+
+altoChorusSolfegeEndOne = \lyricmode {
+	| M S M D |
+}
+
+altoChorusSolfegeEndTwo = \lyricmode {
+	| M |
+}
+
+% Tenor
+tenorChorusSolfegeCommon = \lyricmode {
+	| S S | T T
+	| T T | D D
+	| D D | R R 
+    | R T T
+}
+
+tenorChorusSolfegeEndOne = \lyricmode {
+	| S |
+}
+
+tenorChorusSolfegeEndTwo = \lyricmode {
+	| S |
+}
+
+% Bass
+bassChorusSolfegeCommon = \lyricmode {
+	| D D | S S
+	| R' S, | D D
+	| D M | F F
+    | S S, S
+}
+
+bassChorusSolfegeEndOne = \lyricmode {
+	| D |
+}
+
+bassChorusSolfegeEndTwo = \lyricmode {
+	| D |
+}
+
+
 % ======== %
 % in order %
 % ======== %
@@ -331,19 +400,32 @@ emptyWords = \lyricmode {}
 
 sopAllSolfege = {
 	\sopVerseSolfege
+    \sopChorusSolfegeCommon
+    \sopChorusSolfegeEndOne
+    \sopChorusSolfegeEndTwo
 }
 
 altoAllSolfege = {
 	\altoVerseSolfege
+    \altoChorusSolfegeCommon
+    \altoChorusSolfegeEndOne
+    \altoChorusSolfegeEndTwo
 }
 
 tenorAllSolfege = {
 	\tenorVerseSolfege
+    \tenorChorusSolfegeCommon
+    \tenorChorusSolfegeEndOne
+    \tenorChorusSolfegeEndTwo
 }
 
 bassAllSolfege = {
 	\bassVerseSolfege
+    \bassChorusSolfegeCommon
+    \bassChorusSolfegeEndOne
+    \bassChorusSolfegeEndTwo
 }
+
 
 % All stuff
 
@@ -391,7 +473,15 @@ allStuff = {
 % For printed pdf music.
 \score {
 	\allStuff
-	\layout{}
+	\layout{
+    	% More spacing
+        % https://lilypond.org/doc/v2.18/Documentation/
+        %	notation/changing-horizontal-spacing
+    	\context {
+			\Score
+				\override SpacingSpanner.base-shortest-duration = #(ly:make-moment 1/48)
+		}
+    }
 }
 
 % For midi
